@@ -1,0 +1,1243 @@
+/* =========================================================
+   MINDMESH GLOBAL DESIGN SYSTEM
+   GLOBAL ANIMATED KNOWLEDGE MESH BACKGROUND
+   ========================================================= */
+
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+
+:root {
+  --mindmesh-void: #070a12;
+  --mindmesh-dark: #0b0e1a;
+  --mindmesh-deep: #10162a;
+  --mindmesh-navy: #151a31;
+
+  --mindmesh-blue: #4f8cff;
+  --mindmesh-cyan: #36c7d0;
+  --mindmesh-violet: #8b7fe8;
+  --mindmesh-gold: #d9a94e;
+  --mindmesh-green: #5fd1a1;
+
+  --text-primary: #f4f7ff;
+  --text-secondary: #aeb9ce;
+  --text-muted: #7f8ba3;
+
+  --z-background: 0;
+  --z-content: 1;
+  --z-header: 100;
+  --z-modal: 1000;
+}
+
+
+/* =========================================================
+   GLOBAL ROOT
+   ========================================================= */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: var(--mindmesh-void);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+/* =========================================================
+   APPLICATION SHELL
+
+   IMPORTANT:
+   Never paint another full-page background here.
+   ========================================================= */
+
+.app-shell {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  overflow-x: hidden;
+
+  background: transparent !important;
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   GLOBAL MESH BACKGROUND
+
+   This is the SINGLE background for the application.
+   ========================================================= */
+
+.mesh-background {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+
+  z-index: var(--z-background);
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  background: var(--mindmesh-dark);
+
+  isolation: isolate;
+
+  transform: translateZ(0);
+}
+
+
+/* =========================================================
+   BASE GRADIENT
+   ========================================================= */
+
+.mesh-base-gradient {
+  position: absolute;
+
+  inset: -8%;
+
+  width: 116%;
+  height: 116%;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(91, 78, 200, 0.18),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 80% 75%,
+      rgba(35, 130, 180, 0.10),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 65% 30%,
+      rgba(110, 80, 210, 0.06),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #151a31 0%,
+      #0b1020 45%,
+      #070a12 100%
+    );
+
+  transform: translate3d(0, 0, 0);
+
+  animation:
+    meshBaseDrift
+    32s
+    ease-in-out
+    infinite
+    alternate;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   AMBIENT GLOWS
+   ========================================================= */
+
+.mesh-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  pointer-events: none;
+
+  will-change:
+    transform,
+    opacity;
+
+  opacity: 0.18;
+}
+
+
+/* =========================================================
+   PURPLE GLOW
+   ========================================================= */
+
+.mesh-glow-one {
+  top: -180px;
+  left: -140px;
+
+  width: 600px;
+  height: 600px;
+
+  background:
+    rgba(92, 82, 220, 0.75);
+
+  animation:
+    glowFloatOne
+    18s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+/* =========================================================
+   GOLD GLOW
+   ========================================================= */
+
+.mesh-glow-two {
+  right: -180px;
+  bottom: -220px;
+
+  width: 620px;
+  height: 620px;
+
+  background:
+    rgba(217, 169, 78, 0.38);
+
+  animation:
+    glowFloatTwo
+    22s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+/* =========================================================
+   BLUE/CYAN GLOW
+   ========================================================= */
+
+.mesh-glow-three {
+  top: 30%;
+  left: 42%;
+
+  width: 460px;
+  height: 460px;
+
+  background:
+    rgba(45, 130, 200, 0.28);
+
+  animation:
+    glowFloatThree
+    20s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+/* =========================================================
+   CONNECTION LINES
+   ========================================================= */
+
+.mesh-line {
+  position: absolute;
+
+  height: 1px;
+
+  transform-origin: left center;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(100, 130, 255, 0.06) 10%,
+      rgba(130, 160, 255, 0.34) 50%,
+      rgba(100, 130, 255, 0.06) 90%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 0 14px
+    rgba(100, 130, 255, 0.15);
+
+  will-change:
+    transform,
+    opacity;
+
+  opacity: 0.35;
+}
+
+
+/* =========================================================
+   LINE ONE
+   ========================================================= */
+
+.mesh-line-one {
+  top: 20%;
+  left: 3%;
+
+  width: 460px;
+
+  transform: rotate(18deg);
+
+  animation:
+    lineMoveOne
+    8s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   LINE TWO
+   ========================================================= */
+
+.mesh-line-two {
+  top: 70%;
+  right: 2%;
+
+  width: 500px;
+
+  transform: rotate(-28deg);
+
+  animation:
+    lineMoveTwo
+    10s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   LINE THREE
+   ========================================================= */
+
+.mesh-line-three {
+  top: 48%;
+  left: 38%;
+
+  width: 420px;
+
+  transform: rotate(42deg);
+
+  animation:
+    lineMoveThree
+    12s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   LINE FOUR
+   ========================================================= */
+
+.mesh-line-four {
+  top: 12%;
+  right: 25%;
+
+  width: 350px;
+
+  transform: rotate(-15deg);
+
+  animation:
+    lineMoveFour
+    9s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   FLOATING NODES
+   ========================================================= */
+
+.floating-node {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  opacity: 0.9;
+
+  box-shadow:
+    0 0 10px currentColor,
+    0 0 24px currentColor;
+
+  will-change:
+    transform,
+    opacity;
+
+  transform: translate3d(0, 0, 0);
+}
+
+
+/* =========================================================
+   NODE ONE
+   ========================================================= */
+
+.node-one {
+  top: 18%;
+  left: 12%;
+
+  color: var(--mindmesh-violet);
+  background: var(--mindmesh-violet);
+
+  animation:
+    nodeFloatOne
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   NODE TWO
+   ========================================================= */
+
+.node-two {
+  top: 28%;
+  right: 14%;
+
+  width: 7px;
+  height: 7px;
+
+  color: var(--mindmesh-gold);
+  background: var(--mindmesh-gold);
+
+  animation:
+    nodeFloatTwo
+    6.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   NODE THREE
+   ========================================================= */
+
+.node-three {
+  top: 72%;
+  left: 9%;
+
+  width: 6px;
+  height: 6px;
+
+  color: var(--mindmesh-green);
+  background: var(--mindmesh-green);
+
+  animation:
+    nodeFloatThree
+    6s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   NODE FOUR
+   ========================================================= */
+
+.node-four {
+  top: 78%;
+  right: 18%;
+
+  color: var(--mindmesh-violet);
+  background: var(--mindmesh-violet);
+
+  animation:
+    nodeFloatFour
+    7s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   NODE FIVE
+   ========================================================= */
+
+.node-five {
+  top: 48%;
+  left: 32%;
+
+  width: 6px;
+  height: 6px;
+
+  color: var(--mindmesh-blue);
+  background: var(--mindmesh-blue);
+
+  animation:
+    nodeFloatFive
+    5.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   NODE SIX
+   ========================================================= */
+
+.node-six {
+  top: 35%;
+  right: 35%;
+
+  width: 7px;
+  height: 7px;
+
+  color: var(--mindmesh-gold);
+  background: var(--mindmesh-gold);
+
+  animation:
+    nodeFloatSix
+    8s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   NODE SEVEN
+   ========================================================= */
+
+.node-seven {
+  bottom: 12%;
+  left: 48%;
+
+  width: 6px;
+  height: 6px;
+
+  color: var(--mindmesh-green);
+  background: var(--mindmesh-green);
+
+  animation:
+    nodeFloatSeven
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   NODE EIGHT
+   ========================================================= */
+
+.node-eight {
+  top: 10%;
+  left: 55%;
+
+  width: 5px;
+  height: 5px;
+
+  color: #a8b8ff;
+  background: #a8b8ff;
+
+  animation:
+    nodeFloatEight
+    7s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   NODE NINE
+   ========================================================= */
+
+.node-nine {
+  top: 55%;
+  right: 8%;
+
+  width: 6px;
+  height: 6px;
+
+  color: var(--mindmesh-cyan);
+  background: var(--mindmesh-cyan);
+
+  animation:
+    nodeFloatNine
+    6s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   NODE TEN
+   ========================================================= */
+
+.node-ten {
+  top: 8%;
+  left: 28%;
+
+  width: 5px;
+  height: 5px;
+
+  color: var(--mindmesh-gold);
+  background: var(--mindmesh-gold);
+
+  animation:
+    nodeFloatTen
+    5.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   NODE ELEVEN
+   ========================================================= */
+
+.node-eleven {
+  bottom: 24%;
+  right: 42%;
+
+  width: 7px;
+  height: 7px;
+
+  color: var(--mindmesh-violet);
+  background: var(--mindmesh-violet);
+
+  animation:
+    nodeFloatEleven
+    7.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   NODE TWELVE
+   ========================================================= */
+
+.node-twelve {
+  top: 42%;
+  left: 6%;
+
+  width: 5px;
+  height: 5px;
+
+  color: var(--mindmesh-green);
+  background: var(--mindmesh-green);
+
+  animation:
+    nodeFloatTwelve
+    6.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   VIGNETTE
+   ========================================================= */
+
+.mesh-vignette {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 20;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 30%,
+      rgba(4, 7, 15, 0.10) 68%,
+      rgba(4, 7, 15, 0.50) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   APPLICATION FOREGROUND
+   ========================================================= */
+
+.app-foreground {
+  position: relative;
+
+  z-index: var(--z-content);
+
+  width: 100%;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   APPLICATION CONTENT
+   ========================================================= */
+
+.app-content {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  min-height: calc(100vh - 64px);
+  min-height: calc(100dvh - 64px);
+
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   PAGE-SPECIFIC BACKGROUNDS MUST NOT COVER THE GLOBAL MESH
+   ========================================================= */
+
+.page-container,
+.dashboard-page,
+.workspace-page,
+.discovery-page,
+.search-page,
+.register-page,
+.login-page {
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   PAGE OVERFLOW
+   ========================================================= */
+
+.workspace-page,
+.register-page,
+.login-page,
+.page-container {
+  overflow-x: visible;
+}
+
+
+/* =========================================================
+   BASE BACKGROUND MOTION
+   ========================================================= */
+
+@keyframes meshBaseDrift {
+
+  0% {
+    transform:
+      translate3d(-1.5%, -1%, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(1.5%, 1%, 0)
+      scale(1.035);
+  }
+
+  100% {
+    transform:
+      translate3d(-1%, 2%, 0)
+      scale(1.02);
+  }
+
+}
+
+
+/* =========================================================
+   GLOW ANIMATIONS
+   ========================================================= */
+
+@keyframes glowFloatOne {
+
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  100% {
+    transform:
+      translate3d(180px, 120px, 0)
+      scale(1.18);
+  }
+
+}
+
+
+@keyframes glowFloatTwo {
+
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  100% {
+    transform:
+      translate3d(-160px, -120px, 0)
+      scale(1.15);
+  }
+
+}
+
+
+@keyframes glowFloatThree {
+
+  0% {
+    transform:
+      translate3d(-80px, -40px, 0)
+      scale(0.9);
+  }
+
+  100% {
+    transform:
+      translate3d(140px, 100px, 0)
+      scale(1.15);
+  }
+
+}
+
+
+/* =========================================================
+   LINE MOTION
+   ========================================================= */
+
+@keyframes lineMoveOne {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(18deg);
+
+    opacity: 0.12;
+  }
+
+  50% {
+    transform:
+      translate3d(55px, -28px, 0)
+      rotate(24deg);
+
+    opacity: 0.70;
+  }
+
+}
+
+
+@keyframes lineMoveTwo {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(-28deg);
+
+    opacity: 0.10;
+  }
+
+  50% {
+    transform:
+      translate3d(-60px, 35px, 0)
+      rotate(-22deg);
+
+    opacity: 0.65;
+  }
+
+}
+
+
+@keyframes lineMoveThree {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(42deg);
+
+    opacity: 0.08;
+  }
+
+  50% {
+    transform:
+      translate3d(40px, -40px, 0)
+      rotate(48deg);
+
+    opacity: 0.55;
+  }
+
+}
+
+
+@keyframes lineMoveFour {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(-15deg);
+
+    opacity: 0.08;
+  }
+
+  50% {
+    transform:
+      translate3d(-45px, 30px, 0)
+      rotate(-8deg);
+
+    opacity: 0.55;
+  }
+
+}
+
+
+/* =========================================================
+   NODE FLOATING MOTION
+   ========================================================= */
+
+@keyframes nodeFloatOne {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.65;
+  }
+
+  50% {
+    transform:
+      translate3d(55px, -38px, 0)
+      scale(1.55);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes nodeFloatTwo {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.60;
+  }
+
+  50% {
+    transform:
+      translate3d(-58px, 42px, 0)
+      scale(1.45);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes nodeFloatThree {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.60;
+  }
+
+  50% {
+    transform:
+      translate3d(48px, -52px, 0)
+      scale(1.6);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes nodeFloatFour {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.65;
+  }
+
+  50% {
+    transform:
+      translate3d(-52px, -42px, 0)
+      scale(1.5);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes nodeFloatFive {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.6;
+  }
+
+  50% {
+    transform:
+      translate3d(44px, 50px, 0)
+      scale(1.55);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes nodeFloatSix {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.65;
+  }
+
+  50% {
+    transform:
+      translate3d(-45px, 48px, 0)
+      scale(1.45);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes nodeFloatSeven {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.6;
+  }
+
+  50% {
+    transform:
+      translate3d(38px, -48px, 0)
+      scale(1.65);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes nodeFloatEight {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.55;
+  }
+
+  50% {
+    transform:
+      translate3d(-48px, 42px, 0)
+      scale(1.5);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes nodeFloatNine {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.6;
+  }
+
+  50% {
+    transform:
+      translate3d(-46px, -52px, 0)
+      scale(1.55);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes nodeFloatTen {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.6;
+  }
+
+  50% {
+    transform:
+      translate3d(52px, 34px, 0)
+      scale(1.55);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes nodeFloatEleven {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.65;
+  }
+
+  50% {
+    transform:
+      translate3d(-40px, 48px, 0)
+      scale(1.5);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes nodeFloatTwelve {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+
+    opacity: 0.60;
+  }
+
+  50% {
+    transform:
+      translate3d(46px, -42px, 0)
+      scale(1.55);
+
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .mesh-base-gradient,
+  .mesh-glow,
+  .mesh-line,
+  .floating-node {
+    animation: none !important;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .mesh-glow {
+    filter: blur(75px);
+    opacity: 0.14;
+  }
+
+  .mesh-line-four {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .mesh-glow {
+    filter: blur(65px);
+    opacity: 0.11;
+  }
+
+  .mesh-line-three,
+  .mesh-line-four {
+    display: none;
+  }
+
+  .floating-node {
+    opacity: 0.65;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .node-eight,
+  .node-eleven,
+  .node-twelve {
+    display: none;
+  }
+
+}

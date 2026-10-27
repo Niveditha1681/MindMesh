@@ -1,0 +1,85 @@
+/*
+=========================================================
+WORKSPACE PAGE
+=========================================================
+*/
+
+.workspace-page {
+  position: relative;
+
+  min-height: calc(100vh - 80px);
+
+  padding: 52px 58px;
+
+  color: #ffffff;
+}
+
+
+/*
+=========================================================
+WORKSPACE HEADER
+=========================================================
+*/
+
+.workspace-header {
+  position: relative;
+
+  z-index: 2;
+
+  margin-bottom: 38px;
+}
+
+
+.workspace-header .section-label {
+  display: block;
+
+  margin-bottom: 22px;
+
+  color: #79a9ff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.workspace-header h1 {
+  margin: 0;
+
+  color: #f5f7ff;
+
+  font-size: 38px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.5px;
+}
+
+
+.workspace-header p {
+  margin-top: 14px;
+
+  color: #aeb8ca;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}.workspace-page {
+  position: relative;
+
+  min-height: calc(100vh - 80px);
+
+  isolation: isolate;
+
+  padding: 90px 68px 120px;
+
+  background: transparent;
+
+  overflow: hidden;
+}

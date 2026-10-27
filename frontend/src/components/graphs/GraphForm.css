@@ -1,0 +1,600 @@
+/* =========================================================
+   MINDMESH — GRAPH FORM
+   KNOWLEDGE WORKSPACE
+========================================================= */
+
+
+/* =========================================================
+   GRAPH FORM SECTION
+========================================================= */
+
+.graph-form-section {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 950px;
+
+  padding: 34px;
+
+  border: 1px solid
+    rgba(151, 170, 210, 0.22);
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  color: #202b3d;
+
+  box-shadow:
+    0 24px 70px
+    rgba(0, 0, 0, 0.28);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.graph-form-header {
+  margin-bottom: 28px;
+}
+
+
+.graph-form-header .section-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #3d66a8 !important;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.graph-form-header h2 {
+  margin: 0;
+
+  color: #202b3d !important;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+
+.graph-form-header p {
+  margin:
+    12px 0 0;
+
+  color: #657184 !important;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.graph-form {
+  width: 100%;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.graph-form .form-group {
+  margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   LABELS
+   IMPORTANT:
+   Scoped specifically to GraphForm so global label rules
+   cannot make these labels white.
+========================================================= */
+
+.graph-form .form-group > label {
+  display: block;
+
+  margin:
+    0 0 9px;
+
+  color: #1f2937 !important;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.graph-form .form-group input[type="text"],
+.graph-form .form-group textarea {
+  display: block;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 16px;
+
+  border:
+    1px solid
+    #c6cfdb;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background:
+    #f8fafc;
+
+  color: #273244 !important;
+
+  font-family:
+    "IBM Plex Sans",
+    sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* =========================================================
+   PLACEHOLDERS
+========================================================= */
+
+.graph-form .form-group
+input[type="text"]::placeholder,
+.graph-form .form-group
+textarea::placeholder {
+  color:
+    #8b98a9 !important;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.graph-form .form-group
+input[type="text"]:focus,
+.graph-form .form-group
+textarea:focus {
+  border-color:
+    #4f7fd4;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(79, 127, 212, 0.12);
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.graph-form .form-group textarea {
+  min-height: 130px;
+
+  resize: vertical;
+}
+
+
+/* =========================================================
+   PUBLIC OPTION
+========================================================= */
+
+.graph-form .public-option {
+  margin-top: 6px;
+}
+
+
+/* =========================================================
+   CHECKBOX LABEL
+========================================================= */
+
+.graph-form .checkbox-label {
+  display: flex !important;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 0 !important;
+
+  cursor: pointer;
+
+  color:
+    #3f4b5c !important;
+
+  font-size:
+    16px !important;
+
+  font-weight:
+    500 !important;
+
+  line-height:
+    1.4;
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.graph-form .checkbox-label input {
+  width: 22px;
+
+  height: 22px;
+
+  margin: 0;
+
+  cursor: pointer;
+
+  accent-color:
+    #4778c9;
+}
+
+
+/* =========================================================
+   PUBLIC DESCRIPTION
+========================================================= */
+
+.graph-form .public-description {
+  margin:
+    8px 0 0 34px;
+
+  color:
+    #728094 !important;
+
+  font-size:
+    14px;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.graph-form .error-message {
+  margin-bottom:
+    20px;
+
+  padding:
+    14px 16px;
+
+  border:
+    1px solid
+    rgba(211, 75, 75, 0.35);
+
+  border-radius:
+    10px;
+
+  background:
+    rgba(255, 232, 232, 0.90);
+
+  color:
+    #b33232 !important;
+
+  font-size:
+    14px;
+
+  font-weight:
+    600;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.graph-form .success-message {
+  margin-bottom:
+    20px;
+
+  padding:
+    14px 16px;
+
+  border:
+    1px solid
+    rgba(50, 145, 104, 0.30);
+
+  border-radius:
+    10px;
+
+  background:
+    rgba(225, 248, 237, 0.90);
+
+  color:
+    #247a52 !important;
+
+  font-size:
+    14px;
+
+  font-weight:
+    600;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.graph-form .graph-submit-button {
+  display:
+    block;
+
+  width:
+    100%;
+
+  padding:
+    16px 24px;
+
+  border:
+    none;
+
+  border-radius:
+    12px;
+
+  cursor:
+    pointer;
+
+  background:
+    linear-gradient(
+      90deg,
+      #416cb8,
+      #3d9092
+    );
+
+  color:
+    #ffffff !important;
+
+  font-family:
+    "IBM Plex Sans",
+    sans-serif;
+
+  font-size:
+    16px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.2;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+/* =========================================================
+   SUBMIT HOVER
+========================================================= */
+
+.graph-form .graph-submit-button:hover:not(:disabled) {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 14px 30px
+    rgba(55, 105, 175, 0.30);
+}
+
+
+/* =========================================================
+   SUBMIT DISABLED
+========================================================= */
+
+.graph-form .graph-submit-button:disabled {
+  cursor:
+    not-allowed;
+
+  opacity:
+    0.65;
+
+  transform:
+    none;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .graph-form-section {
+    max-width:
+      100%;
+
+    padding:
+      24px;
+
+    border-radius:
+      16px;
+  }
+
+
+  .graph-form-header h2 {
+    font-size:
+      24px;
+  }
+
+
+  .graph-form-header p {
+    font-size:
+      15px;
+  }
+
+
+  .graph-form .form-group {
+    margin-bottom:
+      20px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .graph-form-section {
+    padding:
+      18px;
+
+    border-radius:
+      14px;
+  }
+
+
+  .graph-form-header {
+    margin-bottom:
+      22px;
+  }
+
+
+  .graph-form-header .section-label {
+    font-size:
+      11px;
+
+    letter-spacing:
+      1.5px;
+  }
+
+
+  .graph-form-header h2 {
+    font-size:
+      22px;
+  }
+
+
+  .graph-form-header p {
+    font-size:
+      14px;
+  }
+
+
+  .graph-form .form-group
+  input[type="text"],
+  .graph-form .form-group
+  textarea {
+    padding:
+      14px;
+
+    font-size:
+      15px;
+  }
+
+
+  .graph-form .checkbox-label {
+    font-size:
+      15px !important;
+  }
+
+
+  .graph-form .public-description {
+    margin-left:
+      32px;
+
+    font-size:
+      13px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .graph-form .graph-submit-button {
+    transition:
+      none;
+  }
+
+}/* =========================================================
+   GRAPH FORM MAIN HEADING
+========================================================= */
+
+.graph-form-header h2 {
+  margin: 0;
+
+  color: #1f2937 !important;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   GRAPH FORM LABELS
+========================================================= */
+
+.graph-form .form-group > label {
+  display: block;
+
+  margin: 0 0 9px;
+
+  color: #1f2937 !important;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}

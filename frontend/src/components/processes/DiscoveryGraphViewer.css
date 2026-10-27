@@ -1,0 +1,567 @@
+/* =========================================================
+   DISCOVERY GRAPH VIEWER
+========================================================= */
+
+.discovery-graph-page {
+  width: 100%;
+  min-height: calc(100vh - 78px);
+
+  box-sizing: border-box;
+
+  padding: 42px 70px 70px;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.discovery-graph-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 32px;
+}
+
+
+.discovery-graph-header-content {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.discovery-graph-header h1 {
+  margin: 10px 0 10px;
+
+  font-size: 36px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  color: #243852;
+}
+
+
+.discovery-graph-header p {
+  margin: 0;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  color: #607086;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-discovery-btn {
+  flex-shrink: 0;
+
+  padding: 12px 20px;
+
+  border: 1px solid #d9e0ea;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #34548a;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.back-discovery-btn:hover {
+  background: #f4f7fb;
+
+  border-color: #b9c6d8;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   GRAPH INFORMATION
+========================================================= */
+
+.discovery-graph-info {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+
+  margin-bottom: 28px;
+}
+
+
+.discovery-info-card {
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e0ea;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  box-shadow:
+    0 6px 18px
+    rgba(30, 55, 90, 0.04);
+}
+
+
+.discovery-info-card span {
+  font-size: 13px;
+
+  color: #7a8798;
+}
+
+
+.discovery-info-card strong {
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: #243852;
+}
+
+
+/* =========================================================
+   CANVAS SECTION
+========================================================= */
+
+.discovery-graph-canvas-section {
+  width: 100%;
+
+  padding: 28px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e0ea;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 24px
+    rgba(30, 55, 90, 0.06);
+}
+
+
+/* =========================================================
+   CANVAS HEADER
+========================================================= */
+
+.discovery-canvas-heading {
+  margin-bottom: 24px;
+}
+
+
+.discovery-canvas-heading h2 {
+  margin: 10px 0 8px;
+
+  font-size: 26px;
+
+  font-weight: 700;
+
+  color: #243852;
+}
+
+
+.discovery-canvas-heading p {
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  color: #607086;
+}
+
+
+/* =========================================================
+   CANVAS
+========================================================= */
+
+.discovery-graph-canvas {
+  position: relative;
+
+  width: 100%;
+
+  height: 600px;
+
+  min-height: 600px;
+
+  overflow: auto;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      rgba(37, 99, 235, 0.025) 1px,
+      transparent 1px
+    ),
+    #f9fbfd;
+
+  background-size:
+    30px 30px;
+
+  border: 1px solid #d9e0ea;
+
+  border-radius: 14px;
+}
+
+
+/* =========================================================
+   NODE
+========================================================= */
+
+.discovery-graph-node {
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 180px;
+
+  max-width: 260px;
+
+  padding: 14px 18px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 2px solid #2563eb;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 6px 16px
+    rgba(30, 55, 90, 0.12);
+
+  z-index: 2;
+}
+
+
+.discovery-graph-node-dot {
+  width: 12px;
+
+  height: 12px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+}
+
+
+.discovery-node-content {
+  min-width: 0;
+}
+
+
+.discovery-graph-node strong {
+  display: block;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #243852;
+}
+
+
+.discovery-graph-node span {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: #7a8798;
+}
+
+
+/* =========================================================
+   CANVAS EMPTY
+========================================================= */
+
+.discovery-canvas-empty {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.discovery-empty-icon {
+  width: 60px;
+
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 50%;
+
+  background: #edf2f8;
+
+  color: #34548a;
+
+  font-size: 28px;
+}
+
+
+.discovery-canvas-empty h3 {
+  margin: 0 0 8px;
+
+  color: #243852;
+}
+
+
+.discovery-canvas-empty p {
+  margin: 0;
+
+  color: #607086;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.discovery-graph-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+
+  margin-top: 20px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid #e2e7ee;
+}
+
+
+.discovery-graph-footer span {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #607086;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.discovery-graph-loading {
+  min-height: 400px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e0ea;
+
+  border-radius: 18px;
+
+  color: #607086;
+}
+
+
+.discovery-loading-spinner {
+  width: 38px;
+
+  height: 38px;
+
+  border: 4px solid #e2e8f0;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation:
+    discovery-spin 0.8s linear infinite;
+}
+
+
+@keyframes discovery-spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.discovery-graph-error {
+  padding: 80px 30px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e0ea;
+
+  border-radius: 18px;
+}
+
+
+.discovery-graph-error h2 {
+  margin-top: 0;
+
+  color: #243852;
+}
+
+
+.discovery-graph-error p {
+  margin-bottom: 24px;
+
+  color: #607086;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .discovery-graph-page {
+    padding:
+      32px
+      30px
+      60px;
+  }
+
+
+  .discovery-graph-header {
+    flex-direction: column;
+  }
+
+
+  .discovery-graph-info {
+    grid-template-columns:
+      1fr;
+  }
+
+
+}
+
+
+@media (max-width: 600px) {
+
+  .discovery-graph-page {
+    padding:
+      24px
+      18px
+      50px;
+  }
+
+
+  .discovery-graph-header h1 {
+    font-size: 30px;
+  }
+
+
+  .discovery-graph-canvas-section {
+    padding: 20px;
+  }
+
+
+  .discovery-graph-canvas {
+    height: 500px;
+
+    min-height: 500px;
+  }
+
+
+  .discovery-graph-footer {
+    flex-wrap: wrap;
+
+    gap: 12px;
+  }
+
+}
